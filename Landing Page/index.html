@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeloData | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="logo.png" class="logo" alt="Logo">
+        <span class="brand-name">MeloData</span>
+    </div>
+
+    <div class="nav-wrapper">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="dashboard.html">DASHBOARD</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- LANDING -->
+<section class="landing">
+    <h1>From Song Attributes to Brain Response</h1>
+    <p>
+        Music is more than sound. It is a combination of measurable attributes such as energy,
+        tempo, and emotional tone. These attributes influence how the brain reacts, shaping our
+        mood, focus, and physical responses.
+    </p>
+</section>
+
+<!-- 🔹 STEP 2: ATTRIBUTE → BRAIN MAPPING BOX -->
+<section class="music-brain-bridge">
+
+    <h2>How Song Attributes Affect the Brain</h2>
+    <p class="intro-text">
+        Each song contains hidden numerical characteristics that influence how we feel,
+        move, and think. Understanding these attributes helps explain why music can
+        energize, relax, or emotionally move us.
+    </p>
+
+    <div class="attribute-box">
+
+        <div class="attribute-item">
+            <h4>Valence</h4>
+            <p>Indicates <b>how positive or negative a song feels</b>, influencing happiness and emotional mood.</p>
+        </div>
+
+        <div class="attribute-item">
+            <h4>Energy</h4>
+            <p>Measures <b>intensity and activity</b>, affecting alertness, excitement, and motivation.</p>
+        </div>
+
+        <div class="attribute-item">
+            <h4>Tempo</h4>
+            <p>Represents the <b>speed of a song</b> and can influence heart rate and physical movement.</p>
+        </div>
+
+        <div class="attribute-item">
+            <h4>Danceability</h4>
+            <p>Shows <b>how suitable a song is for movement</b>, triggering coordination and body response.</p>
+        </div>
+
+        <div class="attribute-item">
+            <h4>Loudness</h4>
+            <p>Reflects <b>sound intensity</b>, stimulating attention and emotional arousal.</p>
+        </div>
+
+    </div>
+
+    <p class="bridge-question">
+        So how do these musical characteristics actually affect the human brain?
+    </p>
+
+    <!-- 🧠 BRAIN IMAGE -->
+    <section class="brain-section">
+        <img src="brain.png" alt="Brain response to music" class="brain">
+</section>
+
+    <p>Diagram above shows how music affects emotional and neurological processes in the brain. <br>
+        Adapted from <a href="https://www.bhardwajmusicacademy.com/the-powerful-effect-of-music-on-brain" target="_blank">Bhardwaj Music Academy, 2023.</a></p>
+
+</section>
+
+<!-- NEWS SLIDER -->
+<section class="news-section">
+    <h2>Latest Music Insights</h2>
+
+    <div class="news-slider">
+        <button class="nav-btn prev">&#10094;</button>
+
+        <div class="news-track">
+
+            <div class="news-card active">
+                <img src="article1.png" alt="Tempo">
+                <h3>How Music Affects Your Mind, Mood and Body</h3>
+                <p>
+                    Music impacts human neurochemistry, emotional conditions, and physical wellness.
+                </p>
+                <a href="https://www.tmh.org/healthy-living/blogs/healthy-living/how-music-affects-your-mind-mood-and-body" target="_blank">Read More</a>
+            </div>
+
+            <div class="news-card">
+                <img src="article2.png" alt="Loudness">
+                <h3>The Transformative Power of Music in Mental Well-Being</h3>
+                <p>
+                    Music supports emotional regulation, trauma recovery, and mental health.
+                </p>
+                <a href="https://www.psychiatry.org/news-room/apa-blogs/power-of-music-in-mental-well-being" target="_blank">Read More</a>
+            </div>
+
+            <div class="news-card">
+                <img src="article3.png" alt="Emotion">
+                <h3>How Music Can Influence Thoughts</h3>
+                <p>
+                    Music alters mental states and influences thoughts and emotions.
+                </p>
+                <a href="https://www.psychologytoday.com/us/blog/science-of-choice/202407/how-music-can-influence-thoughts" target="_blank">Read More</a>
+            </div>
+
+        </div>
+
+        <button class="nav-btn next">&#10095;</button>
+    </div>
+</section>
+
+
+<!-- SLIDER SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector('.news-track');
+    const cards = document.querySelectorAll('.news-card');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    let currentIndex = 0;
+
+    function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        cards.forEach(card => card.classList.remove('active'));
+        cards[currentIndex].classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+        updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+        updateSlider();
+    });
+});
+</script>
+
+</body>
+</html>
