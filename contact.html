@@ -37,6 +37,16 @@
         <b>Institution:</b> Universiti Teknologi MARA, Cawangan Perlis, Kampus Arau, 02600 Arau, Perlis.
     </p>
 </section>
+<div id="footer-placeholder"></div>
 
+<script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Footer load error:", error));
+</script>
 </body>
+
 </html>
