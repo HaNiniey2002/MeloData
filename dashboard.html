@@ -29,6 +29,16 @@
     <h1>Dashboard</h1> <br><br>
     <iframe class="dashboard-iframe" title="FYP" src="https://app.powerbi.com/view?r=eyJrIjoiZTIyM2M1OWQtZTEzYi00YzZlLWJjMmQtN2ZhMWRiYTQwZTRkIiwidCI6ImNkY2JiMGUyLTlmZWEtNGY1NC04NjcwLTY3MjcwNzc5N2FkYSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
 </section>
+<div id="footer-placeholder"></div>
 
+<script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Footer load error:", error));
+</script>
 </body>
 </html>
+
